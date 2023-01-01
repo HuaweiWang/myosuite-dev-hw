@@ -77,6 +77,11 @@ $ MJPL python script.py
 $ sudo apt-get install libgl1-mesa-dev libgl1-mesa-glx libglew-dev libosmesa6-dev
 ```
 
+- Errors realted to osemsa during the myosuite test running. If `GL/osmesa.h` cannot be found and caused 'gcc' faliure. Try to install the following packages and run the test again. Details can be found [here](https://github.com/openai/mujoco-py#ubuntu-installtion-troubleshooting).
+```
+$ sudo apt install libosmesa6-dev libgl1-mesa-glx libglfw3
+```
+
 - If conda environment creation gets interrupted for some reason, you can resume it with the following:
 ```
 $ conda env update -n myosuite-env -f setup/env.yml
