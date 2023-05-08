@@ -11,8 +11,7 @@ Authors  :: Vikash Kumar (vikashplus@gmail.com), Vittorio Caggiano (caggiano@gma
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/facebookresearch/myosuite/blob/main/docs/CONTRIBUTING.md)
 [![Downloads](https://pepy.tech/badge/myosuite)](https://pepy.tech/project/myosuite)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1U6vo6Q_rPhDaq6oUMV7EAZRm6s0fD1wn?usp=sharing)
-
-
+[![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)](https://myosuite.slack.com)
 
 `MyoSuite` is a collection of musculoskeletal environments and tasks simulated with the [MuJoCo](http://www.mujoco.org/) physics engine and wrapped in the OpenAI ``gym`` API to enable the application of Machine Learning to bio-mechanic control problems.
 
@@ -26,11 +25,11 @@ Below is an overview of the tasks in the MyoSuite.
 
 
 ## Getting Started
-You will need Python 3.7.1 or later versions. At this moment, the library has been tested **only on MacOs and Linux** with [MuJoCo v2.1.0](https://github.com/deepmind/mujoco/releases/tag/2.1.0).
+You will need Python 3.8 or later versions. At this moment, the library has been tested **only on MacOs and Linux** with [MuJoCo v2.1.0](https://github.com/deepmind/mujoco/releases/tag/2.1.0).
 
 It is recommended to use [Miniconda](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links) and to create a separate environment with:
 ``` bash
-conda create --name myosuite python=3.7.1
+conda create --name myosuite python=3.8
 conda activate myosuite
 ```
 
@@ -42,12 +41,12 @@ for advanced installation, see [here](setup/README.md).
 
 Test your installation using the following command (this will return also a list of all the current environments):
 ``` bash
-python myosuite/tests/test_myo.py
+python -m myosuite.tests.test_myo
 ```
 
 You can also visualize the environments with random controls using the command below:
-```
-$ python myosuite/utils/examine_env.py --env_name myoElbowPose1D6MRandom-v0
+``` bash
+python -m myosuite.utils.examine_env --env_name myoElbowPose1D6MRandom-v0
 ```
 **NOTE:** If the visualization results in a GLFW error, this is because `mujoco-py` does not see some graphics drivers correctly. This can usually be fixed by explicitly loading the correct drivers before running the python script. See [this page](setup/README.md#known-issues) for details.
 
